@@ -1,0 +1,36 @@
+name: gest_etab
+description: GEST-ÉTAB - Gestion scolaire hors ligne.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+  flutter: '>=3.27.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  provider: ^6.1.2
+  sqflite: ^2.3.3
+  sqflite_common_ffi: ^2.3.3
+  path: ^1.9.0
+  path_provider: ^2.1.3
+  # Étape 4 : rapports PDF (génération, aperçu, impression, partage)
+  pdf: ^3.11.0
+  printing: ^5.12.0
+  file_picker: ^8.1.0
+  # Étapes suivantes (à activer le moment venu) :
+  # excel: ^4.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fonts/
