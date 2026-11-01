@@ -1,0 +1,33 @@
+
+name: Flutter CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le projet
+        uses: actions/checkout@v4
+
+      - name: Installer Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Installer les dependances
+        run: flutter pub get
+
+      - name: Verifier le code
+        run: flutter analyze
+
+      - name: Lancer les tests
+        run: flutter test
+
+      - name: Compiler Android
+        run: flutter build apk --release
